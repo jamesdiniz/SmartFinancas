@@ -37,9 +37,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmartFinancas.Domain\SmartFinancas.Domain.csproj">
+    <ProjectReference Include="..\SmartFinancas.Domain.Core\SmartFinancas.Domain.Core.csproj">
       <Project>{56DC6758-9AD8-4D5C-9F27-3F5107551B84}</Project>
-      <Name>SmartFinancas.Domain</Name>
+      <Name>SmartFinancas.Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

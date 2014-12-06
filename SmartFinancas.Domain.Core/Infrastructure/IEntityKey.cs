@@ -1,5 +1,5 @@
 ﻿
-namespace SmartFinancas.Domain.Infrastructure
+namespace SmartFinancas.Domain.Core.Infrastructure
 {
     public interface IEntityKey<out TKey>
     {

@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Infrastructure.Data.EntityFramework", "SmartFinancas.Infrastructure.Data.EntityFramework\SmartFinancas.Infrastructure.Data.EntityFramework.csproj", "{1E129F49-401D-4212-88F0-566EC440747F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Domain", "SmartFinancas.Domain\SmartFinancas.Domain.csproj", "{56DC6758-9AD8-4D5C-9F27-3F5107551B84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Domain.Core", "SmartFinancas.Domain.Core\SmartFinancas.Domain.Core.csproj", "{56DC6758-9AD8-4D5C-9F27-3F5107551B84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
-﻿using SmartFinancas.Domain.Infrastructure;
+﻿using SmartFinancas.Domain.Core.Infrastructure;
 
-namespace SmartFinancas.Domain
+namespace SmartFinancas.Domain.Core
 {
     public class EntityBase : IEntityKey<int>
     {

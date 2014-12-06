@@ -7,8 +7,8 @@
     <ProjectGuid>{56DC6758-9AD8-4D5C-9F27-3F5107551B84}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartFinancas.Domain</RootNamespace>
-    <AssemblyName>SmartFinancas.Domain</AssemblyName>
+    <RootNamespace>SmartFinancas.Domain.Core</RootNamespace>
+    <AssemblyName>SmartFinancas.Domain.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

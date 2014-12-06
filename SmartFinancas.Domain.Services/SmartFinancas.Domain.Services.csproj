@@ -41,9 +41,9 @@
       <Project>{1bd0dd79-3b2c-4643-b253-9cac5fd4eb6b}</Project>
       <Name>SmartFinancas.Domain.Entities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SmartFinancas.Domain\SmartFinancas.Domain.csproj">
+    <ProjectReference Include="..\SmartFinancas.Domain.Core\SmartFinancas.Domain.Core.csproj">
       <Project>{56dc6758-9ad8-4d5c-9f27-3f5107551b84}</Project>
-      <Name>SmartFinancas.Domain</Name>
+      <Name>SmartFinancas.Domain.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
