@@ -11,7 +11,7 @@ namespace SmartFinancas.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoMapperConfig.RegisterMappings();
-            AutofacConfig.Initialize();
+            AutofacConfig.RegisterContainer();
         }
     }
 }

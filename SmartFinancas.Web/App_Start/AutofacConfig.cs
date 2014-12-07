@@ -7,22 +7,26 @@ using System.Text;
 using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
-using SmartFinancas.Application;
 using SmartFinancas.Domain.Core.Infrastructure;
 
 namespace SmartFinancas.Web
 {
     public class AutofacConfig
     {
-        public static void Initialize()
+        private static IContainer _container;
+
+        public static void RegisterContainer()
         {
             var builder = new ContainerBuilder();
 
             // Registra dependências
             RegisterTypes(builder);
 
+            // Container contendo componentes registrados
+            _container = builder.Build();
+
             // Configura o resolvedor de dependência do MVC para usar Autofac
-            DependencyResolver.SetResolver(new AutofacDependencyResolver(builder.Build()));
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(_container));
         }
 
         private static void RegisterTypes(ContainerBuilder builder)
@@ -40,9 +44,7 @@ namespace SmartFinancas.Web
 
             #region Registar dependências da aplicação neste assembly
 
-            //builder.RegisterType<ContaAppService>().AsSelf().InstancePerRequest();
-            builder.RegisterType<ContaAppService>().AsSelf().As<IContaAppService>().InstancePerRequest();
-            //builder.RegisterType<ContaAppService>().As<IContaAppService>().InstancePerRequest();
+            //builder.RegisterType<AppService>().AsSelf().As<IAppService>().InstancePerRequest();
             
             #endregion
 
@@ -86,6 +88,14 @@ namespace SmartFinancas.Web
         private static ImportDefinition BuildImportDefinition()
         {
             return new ImportDefinition(def => true, typeof(IDependency).FullName, ImportCardinality.ZeroOrMore, false, false);
+        }
+
+        public static T Resolve<T>()
+        {
+            if (_container == null)
+                RegisterContainer();
+
+            return _container.Resolve<T>();
         }
     }
 
