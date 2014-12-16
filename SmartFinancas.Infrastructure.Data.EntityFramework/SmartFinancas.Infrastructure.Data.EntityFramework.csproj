@@ -44,15 +44,20 @@
     <Reference Include="System.Data" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IBaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configuration\" />
     <Folder Include="Conventions\" />
-    <Folder Include="Repositories\" />
+    <Folder Include="Initializers\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SmartFinancas.Domain.Core\SmartFinancas.Domain.Core.csproj">
+      <Project>{56dc6758-9ad8-4d5c-9f27-3f5107551b84}</Project>
+      <Name>SmartFinancas.Domain.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartFinancas.Domain.Entities\SmartFinancas.Domain.Entities.csproj">
       <Project>{1bd0dd79-3b2c-4643-b253-9cac5fd4eb6b}</Project>
       <Name>SmartFinancas.Domain.Entities</Name>
