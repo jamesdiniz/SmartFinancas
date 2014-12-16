@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Domain.Core", "SmartFinancas.Domain.Core\SmartFinancas.Domain.Core.csproj", "{56DC6758-9AD8-4D5C-9F27-3F5107551B84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartFinancas.Web.Framework", "SmartFinancas.Web.Framework\SmartFinancas.Web.Framework.csproj", "{A982F2A0-93F5-4C1C-BE3B-9B53BF2D3C40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{56DC6758-9AD8-4D5C-9F27-3F5107551B84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56DC6758-9AD8-4D5C-9F27-3F5107551B84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56DC6758-9AD8-4D5C-9F27-3F5107551B84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A982F2A0-93F5-4C1C-BE3B-9B53BF2D3C40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A982F2A0-93F5-4C1C-BE3B-9B53BF2D3C40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A982F2A0-93F5-4C1C-BE3B-9B53BF2D3C40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A982F2A0-93F5-4C1C-BE3B-9B53BF2D3C40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,5 +70,6 @@ Global
 		{5569C670-51B0-43FB-802A-17A24260C5A1} = {62E9DDD5-F1DC-451C-93E1-BE66CE094043}
 		{1E129F49-401D-4212-88F0-566EC440747F} = {B84AC474-AE5E-43DD-A7CF-861731A950A2}
 		{56DC6758-9AD8-4D5C-9F27-3F5107551B84} = {D8031A67-34A1-4D5C-9CC3-4F05C3EE3748}
+		{A982F2A0-93F5-4C1C-BE3B-9B53BF2D3C40} = {48B40364-CC76-438A-B820-CB72951359E1}
 	EndGlobalSection
 EndGlobal

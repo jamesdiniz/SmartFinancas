@@ -8,10 +8,10 @@ namespace SmartFinancas.Web
     {
         protected void Application_Start()
         {
+            DependencyConfig.RegisterDependencies();
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoMapperConfig.RegisterMappings();
-            AutofacConfig.RegisterContainer();
         }
     }
 }
