@@ -51,5 +51,12 @@ namespace SmartFinancas.Domain.Core.Infrastructure
         /// <param name="predicate">Filtro de expressão Linq</param>
         /// <returns>Se existe algum objeto</returns>
         bool Any(Expression<Func<T, bool>> predicate);
+
+        /// <summary>
+        /// Obtém o total de objetos no banco de dados
+        /// </summary>
+        /// <remarks>Sincrono</remarks>
+        /// <returns>O total de objetos</returns>
+        int Count();
     }
 }

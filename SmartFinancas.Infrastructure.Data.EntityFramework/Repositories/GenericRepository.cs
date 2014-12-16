@@ -173,156 +173,61 @@ namespace SmartFinancas.Infrastructure.Data.EntityFramework.Repositories
         /// <summary>
         /// Adiciona um único objeto ao banco de dados
         /// </summary>
-        /// <remarks>Sincrono</remarks>
         /// <param name="entity">O objeto a ser adicionado</param>
-        /// <returns>O objeto resultante com a chave primária após inserção</returns>
-        public T Add(T entity)
+        public void Add(T entity)
         {
             Entities.Add(entity);
-            //_context.SaveChanges();
-            return entity;
-        }
-
-        /// <summary>
-        /// Adiciona um único objeto ao banco de dados
-        /// </summary>
-        /// <remarks>Assincrono</remarks>
-        /// <param name="entity">O objeto a ser adicionado</param>
-        /// <returns>O objeto resultante com a chave primária após inserção</returns>
-        public async Task<T> AddAsync(T entity)
-        {
-            Entities.Add(entity);
-            await _context.SaveChangesAsync();
-            return entity;
         }
 
         /// <summary>
         /// Adiciona uma coleção de objetos ao banco de dados
         /// </summary>
-        /// <remarks>Sincrono</remarks>
         /// <param name="entities">Um lista do tipo IEnumerable de objetos a serem adicionados</param>
-        /// <returns>A lista do tipo IEnumerable de objetos inseridos com a chave primária após inserção</returns>
-        public IEnumerable<T> AddAll(IEnumerable<T> entities)
+        public void AddAll(IEnumerable<T> entities)
         {
-            if (entities == null) return null;
+            if (entities == null) return;
             
             var addAll = entities as IList<T> ?? entities.ToList();
             Entities.AddRange(addAll);
-            _context.SaveChanges();
-            return addAll;
-        }
-
-        /// <summary>
-        /// Adiciona uma coleção de objetos ao banco de dados
-        /// </summary>
-        /// <remarks>Assincrono</remarks>
-        /// <param name="entities">Um lista do tipo IEnumerable de objetos a serem adicionados</param>
-        /// <returns>A lista do tipo IEnumerable de objetos inseridos com a chave primária após inserção</returns>
-        public async Task<IEnumerable<T>> AddAllAsync(IEnumerable<T> entities)
-        {
-            Entities.AddRange(entities);
-            await _context.SaveChangesAsync();
-            return entities;
         }
 
         /// <summary>
         /// Atualiza um único objeto
         /// </summary>
-        /// <remarks>Sincrono</remarks>
         /// <param name="entity">O objeto a ser atualizado</param>
-        /// <returns>O objeto resultante da atualização</returns>
-        public T Update(T entity)
+        public void Update(T entity)
         {
             if (entity == null)
-                return null;
+                return;
 
             _context.Entry(entity).State = EntityState.Modified;
-            _context.SaveChanges();
-
-            return entity;
-        }
-
-        /// <summary>
-        /// Atualiza um único objeto
-        /// </summary>
-        /// <remarks>Assincrono</remarks>
-        /// <param name="entity">O objeto a ser atualizado</param>
-        /// <returns>O objeto resultante da atualização</returns>
-        public async Task<T> UpdateAsync(T entity)
-        {
-            if (entity == null)
-                return null;
-
-            _context.Entry(entity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
-            return entity;
         }
 
         /// <summary>
         /// Atualiza um único objeto baseado na chave primária
         /// </summary>
-        /// <remarks>Sincrono</remarks>
         /// <param name="entity">O objeto a ser atualizado</param>
         /// <param name="key">A chave primária do objeto a ser atualizado</param>
-        /// <returns>O objeto resultante da atualização</returns>
-        public T Update(T entity, int key)
+        public void Update(T entity, int key)
         {
             if (entity == null)
-                return null;
+                return;
 
             var existing = Get(key);
             if (existing == null)
-                return null;
+                return;
 
             _context.Entry(existing).CurrentValues.SetValues(entity);
-            _context.SaveChanges();
-
-            return existing;
-        }
-
-        /// <summary>
-        /// Atualiza um único objeto baseado na chave primária
-        /// </summary>
-        /// <remarks>Assincrono</remarks>
-        /// <param name="entity">O objeto a ser atualizado</param>
-        /// <param name="key">A chave primária do objeto a ser atualizado</param>
-        /// <returns>O objeto resultante da atualização</returns>
-        public async Task<T> UpdateAsync(T entity, int key)
-        {
-            if (entity == null)
-                return null;
-
-            var existing = await GetAsync(key);
-            if (existing == null)
-                return null;
-
-            _context.Entry(existing).CurrentValues.SetValues(entity);
-            await _context.SaveChangesAsync();
-
-            return existing;
         }
 
         /// <summary>
         /// Exclui um objeto do banco de dados
         /// </summary>
-        /// <remarks>Sincrono</remarks>
         /// <param name="entity">O objeto a ser excluído</param>
         public void Delete(T entity)
         {
             Entities.Remove(entity);
             _context.SaveChanges();
-        }
-
-        /// <summary>
-        /// Exclui um objeto do banco de dados
-        /// </summary>
-        /// <remarks>Assincrono</remarks>
-        /// <param name="entity">O objeto a ser excluído</param>
-        public async Task<int> DeleteAsync(T entity)
-        {
-            Entities.Remove(entity);
-            return await _context.SaveChangesAsync();
         }
 
         #endregion

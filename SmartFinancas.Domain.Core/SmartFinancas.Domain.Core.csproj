@@ -40,7 +40,6 @@
     <Compile Include="Infrastructure\IReadOnlyRepository.cs" />
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\IReadOnlyRepositoryAsync.cs" />
-    <Compile Include="Infrastructure\IRepositoryAsync.cs" />
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

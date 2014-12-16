@@ -52,5 +52,12 @@ namespace SmartFinancas.Domain.Core.Infrastructure
         /// <param name="predicate">Filtro de expressão Linq</param>
         /// <returns>Se existe algum objeto</returns>
         Task<bool> AnyAsync(Expression<Func<T, bool>> predicate);
+
+        /// <summary>
+        /// Obtém o total de objetos no banco de dados
+        /// </summary>
+        /// <remarks>Assincrono</remarks>
+        /// <returns>O total de objetos</returns>
+        Task<int> CountAsync();
     }
 }
